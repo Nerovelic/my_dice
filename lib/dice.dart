@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-class Dice extends StatelessWidget {
-  const Dice({super.key});
+class dice extends StatefulWidget {
+  const dice({Key? key}) : super(key: key);
+  @override
+  _diceState createState() => _diceState();
+}
+
+class _diceState extends State<dice> {
+  int left_dice = 1;
+  int right_dice = 1;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -9,13 +17,21 @@ class Dice extends StatelessWidget {
       children: [
         Row(children: <Widget>[
           Expanded(
-              child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Image.asset('assets/images/dice1.png'))),
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      left_dice = Random().nextInt(6) + 1;
+                    });
+                  },
+                  child: Image.asset('assets/images/dice$left_dice.png'))),
           Expanded(
-              child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Image.asset('assets/images/dice2.png'))),
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      right_dice = Random().nextInt(6) + 1;
+                    });
+                  },
+                  child: Image.asset('assets/images/dice$right_dice.png'))),
         ])
       ],
     );

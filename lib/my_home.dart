@@ -12,7 +12,7 @@ class my_home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dados'),
       ),
-      body: const Dice(),
+      body: const dice(),
     );
   }
 }

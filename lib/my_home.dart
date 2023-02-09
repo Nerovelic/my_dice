@@ -8,11 +8,10 @@ class my_home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
-      appBar: AppBar(
-        title: const Text('Dados'),
-      ),
-      body: const dice(),
-    );
+        backgroundColor: Colors.indigo,
+        appBar: AppBar(
+          title: const Text('Dados'),
+        ),
+        body: const dice());
   }
 }

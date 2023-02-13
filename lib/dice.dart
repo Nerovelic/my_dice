@@ -36,12 +36,21 @@ class _diceState extends State<dice> {
               child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Image.asset('assets/images/dice$right_dice.png'))),
-          ElevatedButton(
+        ]),
+        const SizedBox(
+          height: 30,
+        ),
+        SizedBox(
+          height: 50,
+          child: ElevatedButton(
               onPressed: () {
                 diceOne();
               },
-              child: const Text("Lanza el dado")),
-        ])
+              child: const Text(
+                "Lanza el dado",
+                style: TextStyle(fontSize: 40),
+              )),
+        )
       ],
     );
   }
